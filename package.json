@@ -14,7 +14,9 @@
   },
   "homepage": "https://github.com/rebelmail/node-lambda-template",
   "dependencies": {
-    "node-lambda": "0.1.5"
+    "node-fetch": "^1.5.3",
+    "node-lambda": "^0.7.1",
+    "node-telegram-bot-api": "^0.23.3"
   },
   "scripts": {
     "setup": "node-lambda setup",

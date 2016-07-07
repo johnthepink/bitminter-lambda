@@ -32,6 +32,6 @@ node_modules
 .lock-wscript
 
 
-.env
+*.env
 event.json
 .DS_Store
