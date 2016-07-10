@@ -27,10 +27,14 @@ exports.handler = (event, context, callback) => {
     .then(response => response.json())
     .then(data => data.hash_rate)
     .then((hash_rate) => {
-      bot.sendMessage(telegram_id, formatHash(hash_rate))
-        .then(() => { callback(null, hash_rate) })
-        .catch(error => callback(error))
-      ;
+      if (Number(hash_rate) === 0) {
+        bot.sendMessage(telegram_id, formatHash(hash_rate))
+          .then(() => { callback(null, hash_rate) })
+          .catch(error => callback(error))
+        ;
+      } else {
+        callback(null, hash_rate);
+      }
     })
     .catch(error => callback(error))
   ;
